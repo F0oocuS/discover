@@ -1,0 +1,16 @@
+.map-tile {
+	&__row {
+		padding: 0;
+		margin-bottom: 1px;
+		list-style: none;
+		display: flex;
+	}
+
+	&__cell {
+		width: 131px;
+		&:nth-child(even) {
+			position: relative;
+			top: 75.5px;
+		}
+	}
+}

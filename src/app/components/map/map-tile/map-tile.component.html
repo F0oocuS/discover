@@ -1,1 +1,7 @@
-<p>map-tile works!</p>
+<div class="map-tile" *ngIf="tileData">
+	<div class="map-tile__row" *ngFor="let item of tileData">
+		<div class="map-tile__cell" *ngFor="let cell of item">
+			<app-map-cell [image]="cell.image"></app-map-cell>
+		</div>
+	</div>
+</div>
