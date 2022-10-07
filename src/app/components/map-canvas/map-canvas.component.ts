@@ -25,25 +25,40 @@ export class MapCanvasComponent implements OnInit {
 		this.ctx.strokeStyle = 'coral';
 		this.ctx.fillRect(0, 0, 1000, 600);
 
-		this.generateImage();
+		// this.generateMap();
 
-		setTimeout(() => {
-			for (let i = 0; i < 6; i++) {
-				if (i !== 0) {
-					this.startCoordinate.y += this.hexagonRadius * Math.sin(this.startAngle);
-					this.startCoordinate.x = this.hexagonRadius + 10;
-				}
-				for (let j = 0; j < 12; j++) {
-					if (j !== 0) {
-						this.startCoordinate.x += this.hexagonRadius + this.hexagonRadius * Math.cos(this.startAngle);
-						this.startCoordinate.y -= (-1) ** j * this.hexagonRadius * Math.sin(this.startAngle);
-					}
+		/*this.ctx.beginPath();
+		this.ctx.moveTo(170, 80);
+		this.ctx.bezierCurveTo(130, 100, 130, 150, 230, 150);
+		this.ctx.bezierCurveTo(250, 180, 320, 180, 340, 150);
+		this.ctx.bezierCurveTo(420, 150, 420, 120, 390, 100);
+		this.ctx.bezierCurveTo(430, 40, 370, 30, 340, 50);
+		this.ctx.bezierCurveTo(320, 5, 250, 20, 250, 50);
+		this.ctx.bezierCurveTo(200, 5, 150, 20, 170, 80);
+		this.ctx.closePath();
+		this.ctx.lineWidth = 5;
+		this.ctx.fillStyle = '#8ED6FF';
+		this.ctx.fill();
+		this.ctx.strokeStyle = 'blue';
+		this.ctx.stroke();*/
 
-					this.drawHexagon();
-				}
-			}
-			this.ctx.clip();
-		}, 300);
+		// clip any subsequent draws to the cloud
+		this.ctx.beginPath();
+		this.ctx.moveTo(170, 80);
+		this.ctx.bezierCurveTo(130, 100, 130, 150, 230, 150);
+		this.ctx.bezierCurveTo(250, 180, 320, 180, 340, 150);
+		this.ctx.bezierCurveTo(420, 150, 420, 120, 390, 100);
+		this.ctx.bezierCurveTo(430, 40, 370, 30, 340, 50);
+		this.ctx.bezierCurveTo(320, 5, 250, 20, 250, 50);
+		this.ctx.bezierCurveTo(200, 5, 150, 20, 170, 80);
+		this.ctx.closePath();
+		this.ctx.clip();
+
+		const image = new Image();
+		image.src = 'assets/images/cell-images/water.png';
+		image.onload = () => {
+			this.ctx.drawImage(image, 130, 0, 300, 300);
+		}
 
 		console.log(this.ctx);
 	}
@@ -57,6 +72,28 @@ export class MapCanvasComponent implements OnInit {
 
 		this.ctx.closePath();
 		this.ctx.stroke();
+	}
+
+	public generateMap() {
+		this.generateImage();
+
+		setTimeout(() => {
+			for (let i = 0; i < 6; i++) {
+				if (i !== 0) {
+					this.startCoordinate.y += this.hexagonRadius * Math.sin(this.startAngle);
+					this.startCoordinate.x = this.hexagonRadius + 10;
+				}
+				for (let j = 0; j < 10; j++) {
+					if (j !== 0) {
+						this.startCoordinate.x += this.hexagonRadius + this.hexagonRadius * Math.cos(this.startAngle);
+						this.startCoordinate.y -= (-1) ** j * this.hexagonRadius * Math.sin(this.startAngle);
+					}
+
+					this.drawHexagon();
+				}
+			}
+			this.ctx.clip();
+		}, 300);
 	}
 
 	public generateImage() {
