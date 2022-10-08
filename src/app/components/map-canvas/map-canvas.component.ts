@@ -33,7 +33,7 @@ export class MapCanvasComponent implements OnInit {
 					this.startCoordinate.y += this.hexagonRadius * Math.sin(this.startAngle);
 					this.startCoordinate.x = this.hexagonRadius + 10;
 				}
-				for (let j = 0; j < 12; j++) {
+				for (let j = 0; j < 14; j++) {
 					if (j !== 0) {
 						this.startCoordinate.x += this.hexagonRadius + this.hexagonRadius * Math.cos(this.startAngle);
 						this.startCoordinate.y -= (-1) ** j * this.hexagonRadius * Math.sin(this.startAngle);
