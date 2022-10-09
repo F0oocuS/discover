@@ -1,8 +1,28 @@
 <div>
+	<header class="header">
+		<ul class="header__list">
+			<li class="header__list-item">
+				<a routerLink="" class="header__link">Home</a>
+			</li>
+
+			<li class="header__list-item">
+				<a routerLink="login" class="header__link">Login</a>
+			</li>
+
+			<li class="header__list-item">
+				<a routerLink="registration" class="header__link">Registration</a>
+			</li>
+
+			<li class="header__list-item">
+				<a routerLink="lobby" class="header__link">Lobby</a>
+			</li>
+
+			<li class="header__list-item">
+				<a routerLink="game" class="header__link">Game</a>
+			</li>
+		</ul>
+	</header>
 	<h1>Discover unknown lands table game</h1>
 
-<!--	<app-map></app-map>-->
-
-<!--	<app-map-canvas></app-map-canvas>-->
-<app-registration-page></app-registration-page>
+	<router-outlet></router-outlet>
 </div>

@@ -1,6 +1,121 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'assets/css/reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 * {
 	box-sizing: border-box;
+}
+
+.wallpaper-auth {
+	width: 100%;
+	height: 100vh;
+	padding: 100px;
+	text-align: left;
+	background-image: url("/assets/images/background-auth.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+
+.auth-form {
+	max-width: 600px;
+	background: rgba(104, 54, 29, 0.7);
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+	border-radius: 8px;
+	padding: 50px 80px;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	color: rgba(255, 255, 255, 0.8);
+
+	&__title {
+		font-size: 45px;
+		color: #fff;
+		text-align: center;
+		font-weight: 300;
+		margin-bottom: 50px;
+	}
+}
+
+.input {
+	&__container {
+		margin-bottom: 48px;
+	}
+
+	&__form {
+		width: 100%;
+		padding: 12px 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+
+		&:not(:last-child) {
+			margin-bottom: 25px;
+		}
+	}
+
+	&__item {
+		background: transparent;
+		font-size: 18px;
+		color: #fff;
+		border: none;
+		outline: none;
+
+		&::placeholder {
+			font-family: 'Plus Jakarta Sans', sans-serif;
+			font-size: 18px;
+			font-weight: 300;
+			color: rgba(255, 255, 255, 0.8);
+			letter-spacing: 1.2px;
+		}
+	}
+}
+
+.button-auth {
+	cursor: pointer;
+	display: block;
+	margin: 0 auto;
+	padding: 12px 70px;
+	border-radius: 8px;
+	background: transparent;
+	color: rgba(255, 255, 255, 0.8);
+	border: 1px solid rgba(255, 255, 255, 0.8);
+	font-family: inherit;
+	font-size: 17px;
+	font-weight: 400;
+	text-transform: uppercase;
+
+	&--fill {
+		background: rgba(255, 255, 255, 0.8);
+		color: rgb(104, 54, 29);
+		border: none;
+	}
+}
+
+.input {
+	&__container {
+		margin-bottom: 48px;
+	}
+
+	&__form {
+		width: 70%;
+		padding: 12px 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+
+		&:not(:last-child) {
+			margin-bottom: 25px;
+		}
+	}
+
+	&__item {
+		background: transparent;
+		font-size: 18px;
+		color: #fff;
+		border: none;
+		outline: none;
+
+		&::placeholder {
+			font-family: 'Plus Jakarta Sans', sans-serif;
+			font-size: 18px;
+			font-weight: 300;
+			color: rgba(255, 255, 255, 0.8);
+			letter-spacing: 1.2px;
+		}
+	}
 }

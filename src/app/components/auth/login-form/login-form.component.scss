@@ -1,0 +1,57 @@
+.auth-form {
+
+	&__title {
+		font-size: 43px;
+	}
+
+	&__button-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 80px;
+	}
+
+	&__button {
+		margin: 0;
+	}
+
+	&__alternative {
+		text-align: center;
+		margin-bottom: 26px;
+		position: relative;
+
+		&:before {
+			content: "";
+			height: 1px;
+			width: 38%;
+			background: rgba(225, 225, 225, 0.7);
+			position: absolute;
+			top: 50%;
+			left: 0;
+		}
+
+		&:after {
+			content: "";
+			height: 1px;
+			width: 38%;
+			background: rgba(225, 225, 225, 0.7);
+			position: absolute;
+			top: 50%;
+			right: 0;
+		}
+	}
+}
+
+.social {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+
+	&__item {
+		opacity: 0.7;
+		width: 3.2em;
+		cursor: pointer;
+	}
+}
+
+
