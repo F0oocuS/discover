@@ -1,7 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-	logExperimentalWarnings
-} from '@angular-devkit/build-angular/src/builders/browser-esbuild/experimental-warnings';
 
 @Component({
 	selector: 'app-map-canvas',
