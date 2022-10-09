@@ -3,9 +3,9 @@ export interface CellInterface {
 	cellType: string;
 	moveCost: number;
 	terrain: string;
-	landmark: string;
-	resource: string;
-	objective: number;
+	landmark: string | null;
+	resource: string | null;
+	objective: number | null;
 	tileID: number;
 	isReveal: boolean;
 	isCanMove: boolean;
