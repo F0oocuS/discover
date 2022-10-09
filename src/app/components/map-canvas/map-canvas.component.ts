@@ -60,16 +60,6 @@ export class MapCanvasComponent implements OnInit {
 			width: 12,
 			height: 18
 		},
-		disableCells: [
-			[[0, 0], [1,4]],
-			[[10, 0], [11, 4]],
-			[[0, 12], [1, 17]],
-			[[10, 12], [11, 17]]
-		],
-		additionalCells: [
-			[[0, 12], [0, 12]],
-			[[10, 12], [10 ,12]]
-		],
 		tiles: [
 			{
 				id: 0,
@@ -201,16 +191,7 @@ export class MapCanvasComponent implements OnInit {
 						this.startCoordinate.y -= (-1) ** j * this.hexagonRadius * Math.sin(this.startAngle);
 					}
 
-					let disableCell: boolean = false;
-
-					this.mapTemplate.disableCells.forEach((element, index) => {
-						if ((i >= element[0][1] && i <= element[1][1] && j >= element[0][0] && j <= element[1][0])) disableCell = true;
-					})
-					 this.mapTemplate.additionalCells.forEach((element, index) => {
-						 if ((i >= element[0][1] && i <= element[1][1] && j >= element[0][0] && j <= element[1][0])) disableCell = false;
-					 })
-
-					if (!disableCell && !(i === this.mapTemplate.size.height - 1 && j % 2 !==0)) this.drawHexagon(i, j);
+					this.drawHexagon(i, j);
 				}
 			}
 			this.ctx.clip();
