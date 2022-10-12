@@ -11,6 +11,11 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { GamePageComponent } from './pages/game-page/game-page.component';
 import { LobbyPageComponent } from './pages/lobby-page/lobby-page.component';
+import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
+import { RegistrationFormComponent } from './components/auth/registration-form/registration-form.component';
+import { LoginFormComponent } from './components/auth/login-form/login-form.component';
+
+
 
 @NgModule({
 	declarations: [
@@ -22,7 +27,11 @@ import { LobbyPageComponent } from './pages/lobby-page/lobby-page.component';
 		LoginPageComponent,
 		HomePageComponent,
 		GamePageComponent,
-		LobbyPageComponent
+		LobbyPageComponent,
+		MapCanvasComponent,
+		RegistrationPageComponent,
+		RegistrationFormComponent,
+  LoginFormComponent,
 	],
 	imports: [
 		BrowserModule,

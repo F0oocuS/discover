@@ -1,0 +1,122 @@
+.auth-form {
+	max-width: 600px;
+	background: rgba(104, 54, 29, 0.7);
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+	border-radius: 8px;
+	padding: 50px 80px;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	color: rgba(255, 255, 255, 0.8);
+
+	&__title {
+		font-size: 43px;
+		color: #fff;
+		text-align: center;
+		font-weight: 300;
+		margin-bottom: 50px;
+	}
+
+	&__button-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 80px;
+	}
+
+	&__button {
+		margin: 0;
+	}
+
+	&__alternative {
+		text-align: center;
+		margin-bottom: 26px;
+		position: relative;
+
+		&:before {
+			content: "";
+			height: 1px;
+			width: 38%;
+			background: rgba(225, 225, 225, 0.7);
+			position: absolute;
+			top: 50%;
+			left: 0;
+		}
+
+		&:after {
+			content: "";
+			height: 1px;
+			width: 38%;
+			background: rgba(225, 225, 225, 0.7);
+			position: absolute;
+			top: 50%;
+			right: 0;
+		}
+	}
+}
+
+.input-auth {
+
+	&__container {
+		margin-bottom: 48px;
+	}
+
+	&__form {
+		width: 70%;
+		padding: 12px 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+
+		&:not(:last-child) {
+			margin-bottom: 25px;
+		}
+	}
+
+	&__item {
+		background: transparent;
+		font-size: 18px;
+		color: #fff;
+		border: none;
+		outline: none;
+
+		&::placeholder {
+			font-family: 'Plus Jakarta Sans', sans-serif;
+			font-size: 18px;
+			font-weight: 300;
+			color: rgba(255, 255, 255, 0.8);
+			letter-spacing: 1.2px;
+		}
+	}
+}
+
+.button-auth {
+	cursor: pointer;
+	display: block;
+	margin: 0 auto;
+	padding: 12px 70px;
+	border-radius: 8px;
+	background: transparent;
+	color: rgba(255, 255, 255, 0.8);
+	border: 1px solid rgba(255, 255, 255, 0.8);
+	font-family: inherit;
+	font-size: 17px;
+	font-weight: 400;
+	text-transform: uppercase;
+
+	&--fill {
+		background: rgba(255, 255, 255, 0.8);
+		color: rgb(104, 54, 29);
+		border: none;
+	}
+}
+
+.social {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+
+	&__item {
+		opacity: 0.7;
+		width: 3.2em;
+		cursor: pointer;
+	}
+}
+
+
