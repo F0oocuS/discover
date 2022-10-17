@@ -9,4 +9,5 @@ export interface CellInterface {
 	tileID: number;
 	isReveal: boolean;
 	isCanMove: boolean;
+	players?: number[];
 }
