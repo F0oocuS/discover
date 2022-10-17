@@ -13,7 +13,7 @@ export class GameDataService {
 			id: 0,
 			cells: [
 				{ id: 0, cellType: 'game', moveCost: 1, terrain: 'meadow', landmark: null, resource: null, objective: null, tileID: 0, isReveal: true, isCanMove: true },
-				{ id: 1, cellType: 'game', moveCost: 2, terrain: 'hill', landmark: 'binocle', resource: null, objective: null, tileID: 0, isReveal: true, isCanMove: true },
+				{ id: 1, cellType: 'game', moveCost: 2, terrain: 'hill', landmark: 'binoculars', resource: null, objective: null, tileID: 0, isReveal: true, isCanMove: true },
 				{ id: 2, cellType: 'game', moveCost: 1, terrain: 'meadow', landmark: null, resource: null, objective: null, tileID: 0, isReveal: true, isCanMove: true },
 				{ id: 3, cellType: 'game', moveCost: 1, terrain: 'meadow', landmark: null, resource: null, objective: null, tileID: 0, isReveal: true, isCanMove: true },
 				{ id: 4, cellType: 'game', moveCost: 1, terrain: 'meadow', landmark: null, resource: null, objective: null, tileID: 0, isReveal: true, isCanMove: true },
