@@ -105,7 +105,7 @@ export class MapCanvasComponent implements OnInit {
 
 		if (cell.objective) {
 			this.ctx.fillStyle = '#343434';
-			this.ctx.fillText(cell.objective.toString(), this.startCoordinate.x + 10, this.startCoordinate.y - 20);
+			this.ctx.fillText(cell.objective.toString(), this.startCoordinate.x - 5, this.startCoordinate.y + 35);
 		}
 
 		if (cell.landmark) {

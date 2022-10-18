@@ -56,8 +56,8 @@ export class GameDataService {
 				{ id: 24, cellType: 'game', moveCost: 1, terrain: 'meadow', landmark: null, resource: null, objective: null, tileID: 2, isReveal: false, isCanMove: false },
 				{ id: 25, cellType: 'game', moveCost: 1, terrain: 'meadow', landmark: null, resource: null, objective: null, tileID: 2, isReveal: false, isCanMove: false },
 				{ id: 26, cellType: 'game', moveCost: 1, terrain: 'meadow', landmark: null, resource: 'stone', objective: null, tileID: 2, isReveal: false, isCanMove: false },
-				{ id: 27, cellType: 'game', moveCost: 2, terrain: 'hill', landmark: null, resource: null, objective: null, tileID: 2, isReveal: false, isCanMove: false },
-				{ id: 28, cellType: 'game', moveCost: 2, terrain: 'hill', landmark: 'shovel', resource: null, objective: null, tileID: 2, isReveal: false, isCanMove: false },
+				{ id: 27, cellType: 'game', moveCost: 2, terrain: 'hill', landmark: 'shovel', resource: null, objective: null, tileID: 2, isReveal: false, isCanMove: false },
+				{ id: 28, cellType: 'game', moveCost: 2, terrain: 'hill', landmark: null, resource: null, objective: null, tileID: 2, isReveal: false, isCanMove: false },
 				{ id: 29, cellType: 'game', moveCost: 1, terrain: 'meadow', landmark: null, resource: null, objective: null, tileID: 2, isReveal: false, isCanMove: false },
 			],
 			number: 1,
@@ -174,8 +174,8 @@ export class GameDataService {
 		{
 			id: 9,
 			cells: [
-				{ id: 90, cellType: 'game', moveCost: 1, terrain: 'meadow', landmark: null, resource: null, objective: 34, tileID: 9, isReveal: false, isCanMove: false },
-				{ id: 91, cellType: 'game', moveCost: 1, terrain: 'meadow', landmark: null, resource: null, objective: null, tileID: 9, isReveal: false, isCanMove: false },
+				{ id: 90, cellType: 'game', moveCost: 1, terrain: 'meadow', landmark: null, resource: null, objective: null, tileID: 9, isReveal: false, isCanMove: false },
+				{ id: 91, cellType: 'game', moveCost: 1, terrain: 'meadow', landmark: null, resource: null, objective: 34, tileID: 9, isReveal: false, isCanMove: false },
 				{ id: 92, cellType: 'game', moveCost: 1, terrain: 'meadow', landmark: null, resource: 'tree', objective: null, tileID: 9, isReveal: false, isCanMove: false },
 				{ id: 93, cellType: 'game', moveCost: 1, terrain: 'meadow', landmark: null, resource: null, objective: null, tileID: 9, isReveal: false, isCanMove: false },
 				{ id: 94, cellType: 'game', moveCost: 1, terrain: 'meadow', landmark: null, resource: null, objective: null, tileID: 9, isReveal: false, isCanMove: false },
