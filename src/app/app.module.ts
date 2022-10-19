@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MapOldVersionComponent } from './components/map-old-version/map-old-version.component';
+import { MapTileComponent } from './components/map-old-version/map-tile/map-tile.component';
+import { MapCellComponent } from './components/map-old-version/map-cell/map-cell.component';
 import { MapComponent } from './components/map/map.component';
-import { MapTileComponent } from './components/map/map-tile/map-tile.component';
-import { MapCellComponent } from './components/map/map-cell/map-cell.component';
-import { MapCanvasComponent } from './components/map-canvas/map-canvas.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { GamePageComponent } from './pages/game-page/game-page.component';
@@ -22,12 +22,12 @@ import { LoginFormComponent } from './components/auth/login-form/login-form.comp
 		MapComponent,
 		MapTileComponent,
 		MapCellComponent,
-		MapCanvasComponent,
+		MapComponent,
 		LoginPageComponent,
 		HomePageComponent,
 		GamePageComponent,
 		LobbyPageComponent,
-		MapCanvasComponent,
+		MapOldVersionComponent,
 		RegistrationPageComponent,
 		RegistrationFormComponent,
 		LoginFormComponent,

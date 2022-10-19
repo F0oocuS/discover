@@ -1,0 +1,8 @@
+.map {
+	&__row {
+		display: flex;
+		&:nth-child(even) {
+			margin-bottom: -151px;
+		}
+	}
+}
