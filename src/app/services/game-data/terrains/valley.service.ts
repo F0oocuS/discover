@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 
-import { TileInterface } from '../../interfaces/map/tile.interface';
+import { TileInterface } from '../../../interfaces/map/tile.interface';
 
 @Injectable({
 	providedIn: 'root'
 })
-export class GameDataService {
-	constructor() {}
-
-	/*private tiles0: TileInterface[] = [
+export class ValleyService {
+	private tiles0: TileInterface[] = [
 		{
 			id: 0,
 			cells: [
@@ -27,7 +25,6 @@ export class GameDataService {
 			direction: 'left'
 		}
 	];
-
 	private tiles1: TileInterface[] = [
 		{
 			id: 1,
@@ -64,7 +61,6 @@ export class GameDataService {
 			direction: 'left'
 		}
 	];
-
 	private tiles2: TileInterface[] = [
 		{
 			id: 3,
@@ -169,7 +165,6 @@ export class GameDataService {
 			direction: 'right'
 		}
 	];
-
 	private tiles3: TileInterface[] = [
 		{
 			id: 9,
@@ -240,7 +235,6 @@ export class GameDataService {
 			direction: 'left'
 		}
 	];
-
 	private tiles4: TileInterface[] = [
 		{
 			id: 13,
@@ -312,15 +306,15 @@ export class GameDataService {
 		}
 	];
 
-	private gameTiles = [
+	private mapTiles: TileInterface[][] = [
 		[...this.tiles0],
 		[...this.tiles1],
 		[...this.tiles2],
 		[...this.tiles3],
-		[...this.tiles4]
+		[...this.tiles4],
 	];
 
-	private gameMapModel = [
+	private mapModel: (string | null)[][] = [
 		[null, null, '4-0-0', '4-0-3', '4-0-5', '4-0-8', '4-1-0', '4-1-3', '4-1-5', '4-1-8', null, null],
 		[null, null, '4-0-1', '4-0-4', '4-0-6', '4-0-9', '4-1-1', '4-1-4', '4-1-6', '4-1-9', null, null],
 		[null, null, '4-0-2', '3-0-2', '4-0-7', '3-0-7', '4-1-2', '3-1-2', '4-1-7', '3-1-7', null, null],
@@ -339,13 +333,13 @@ export class GameDataService {
 		[null, null, '4-2-0', '4-2-3', '4-2-5', '4-2-8', '4-3-0', '4-3-3', '4-3-5', '4-3-8', null, null],
 		[null, null, '4-2-1', '4-2-4', '4-2-6', '4-2-9', '4-3-1', '4-3-4', '4-3-6', '4-3-9', null, null],
 		[null, null, '4-2-2', null, '4-2-7', null, '4-3-2', null, '4-3-7', null, null, null]
-	]
+	];
 
-	getGameTiles() {
-		return this.gameTiles;
+	public getMapTiles(): TileInterface[][] {
+		return [...this.mapTiles];
 	}
 
-	getGameMapModel() {
-		return this.gameMapModel;
-	}*/
+	public getMapModel(): (string | null)[][] {
+		return [...this.mapModel];
+	}
 }

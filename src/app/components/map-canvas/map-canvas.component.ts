@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { GameDataService } from '../../services/game/game-data.service';
+
 import { CellInterface } from '../../interfaces/map/cell.interface';
+
+import { ValleyService } from '../../services/game-data/terrains/valley.service';
 
 @Component({
 	selector: 'app-map-canvas',
@@ -8,7 +10,7 @@ import { CellInterface } from '../../interfaces/map/cell.interface';
 	styleUrls: ['./map-canvas.component.scss']
 })
 export class MapCanvasComponent implements OnInit {
-	constructor(private gameData: GameDataService) {}
+	constructor(private valley: ValleyService) {}
 
 	private gameMapModel: any;
 	private gameMapTiles: any;
@@ -34,8 +36,8 @@ export class MapCanvasComponent implements OnInit {
 	private mapIcons: any = { 'stone': null, 'water': null, 'meal': null, 'animal': null, 'tree': null, 'bonfire': null, 'boots': null, 'shovel': null, 'binoculars': null, 'player-0': null, 'player-1': null, 'player-2': null, 'player-3': null, 'camp': null };
 
 	ngOnInit(): void {
-		this.gameMapTiles = this.gameData.getGameTiles();
-		this.gameMapModel = this.gameData.getGameMapModel();
+		this.gameMapTiles = this.valley.getMapTiles();
+		this.gameMapModel = this.valley.getMapModel();
 
 		this.ctx = this.canvasMap.nativeElement.getContext('2d');
 

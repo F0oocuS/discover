@@ -16,7 +16,6 @@ import { RegistrationFormComponent } from './components/auth/registration-form/r
 import { LoginFormComponent } from './components/auth/login-form/login-form.component';
 
 
-
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -31,7 +30,7 @@ import { LoginFormComponent } from './components/auth/login-form/login-form.comp
 		MapCanvasComponent,
 		RegistrationPageComponent,
 		RegistrationFormComponent,
-  LoginFormComponent,
+		LoginFormComponent,
 	],
 	imports: [
 		BrowserModule,
