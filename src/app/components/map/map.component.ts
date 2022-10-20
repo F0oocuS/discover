@@ -14,11 +14,6 @@ export class MapComponent implements OnInit {
 
 	private gameMapModel: any;
 	private gameMapTiles: any;
-	private gameMapTilesColor: any = {
-		meadow: '#739957',
-		hill: '#3c5730',
-		mount: '#a7adba'
-	};
 
 	@ViewChild('map', { static: true })
 
@@ -81,7 +76,7 @@ export class MapComponent implements OnInit {
 	public drawHexagon(string: string) {
 		const cell = this.getCellData(string);
 
-		this.ctx.fillStyle = this.gameMapTilesColor[cell.terrain];
+		this.ctx.fillStyle = cell.cellType.color;
 
 		this.ctx.beginPath();
 
