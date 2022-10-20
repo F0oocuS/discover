@@ -29,3 +29,10 @@ export const CELL_TYPE_BAYOU_MEADOW: CellTypeInterface = { name: 'Meadow', color
 export const CELL_TYPE_BAYOU_SWAMP: CellTypeInterface = { name: 'Swamp', color: '', moveCost: 2 };
 export const CELL_TYPE_BAYOU_FIRTH: CellTypeInterface = { name: 'Firth', color: '', moveCost: 3 };
 
+// Island terrain types
+export const CELL_TYPE_ISLAND_BEACH: CellTypeInterface = { name: 'Beach', color: '', moveCost: 1 };
+export const CELL_TYPE_ISLAND_GRASS: CellTypeInterface = { name: 'Grass', color: '', moveCost: 1 };
+export const CELL_TYPE_ISLAND_UNDERBRUSH: CellTypeInterface = { name: 'Underbrush', color: '', moveCost: 2 };
+export const CELL_TYPE_ISLAND_OCEAN: CellTypeInterface = { name: 'Ocean', color: '', moveCost: 2 };
+export const CELL_TYPE_ISLAND_MOUNTAIN: CellTypeInterface = { name: 'Mountain', color: '', moveCost: 3 };
+
