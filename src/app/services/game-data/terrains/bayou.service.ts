@@ -2,11 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { TileInterface } from '../../../interfaces/map/tile.interface';
 
-import {
-	CELL_TYPE_BAYOU_BRIDGE, CELL_TYPE_BAYOU_FIRTH, CELL_TYPE_BAYOU_MEADOW,
-	CELL_TYPE_BAYOU_SWAMP,
-	CELL_TYPE_VALLEY_GRASS
-} from '../../../constants/map/cell-types.constants';
+import { CELL_TYPE_BAYOU_FIRTH, CELL_TYPE_BAYOU_MEADOW, CELL_TYPE_BAYOU_SWAMP } from '../../../constants/map/cell-types.constants';
 
 @Injectable({
 	providedIn: 'root'
