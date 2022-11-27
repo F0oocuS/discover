@@ -2,7 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { CellInterface } from '../../interfaces/map/cell.interface';
 
-import { ValleyService } from '../../services/game-data/terrains/valley.service';
+import { MapService } from '../../services/map/map.service';
+
+import { HEXAGON_RADIUS } from '../../constants/map/map.constants';
 
 @Component({
 	selector: 'app-map',
@@ -10,35 +12,35 @@ import { ValleyService } from '../../services/game-data/terrains/valley.service'
 	styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
-	constructor(private valley: ValleyService) {}
+	constructor(private mapService: MapService) {}
 
 	private gameMapModel: any;
 	private gameMapTiles: any;
 
 	@ViewChild('map', { static: true })
 
-	public map: any
+	public map: any;
 	private ctx: any;
 
 	private startAngle = Math.PI / 3;
-	private hexagonRadius: number = 50;
+	private hexagonRadius: number = HEXAGON_RADIUS;
 	private startCoordinate = {
 		x: this.hexagonRadius + 10,
 		y: this.hexagonRadius + 10,
 	}
 
+	private mapSettings: any;
 	private mapIconsLoadedCount: number = 0;
 	private mapIcons: any = { 'stone': null, 'water': null, 'meal': null, 'animal': null, 'tree': null, 'bonfire': null, 'boots': null, 'shovel': null, 'binoculars': null, 'player-0': null, 'player-1': null, 'player-2': null, 'player-3': null, 'camp': null };
 
 	ngOnInit(): void {
-		this.gameMapTiles = this.valley.getMapTiles();
-		this.gameMapModel = this.valley.getMapModel();
-
 		this.ctx = this.map.nativeElement.getContext('2d');
 
 		this.ctx.font = "16px serif";
 		this.ctx.strokeStyle = '#000';
+	}
 
+	public drawMap(): void {
 		for (let image in this.mapIcons) {
 			const imageElement = new Image();
 			imageElement.src = `assets/images/icons/map-icons/${image}.svg`;
@@ -48,26 +50,22 @@ export class MapComponent implements OnInit {
 				this.mapIcons[image] = imageElement;
 
 				if (this.mapIconsLoadedCount === Object.keys(this.mapIcons).length) {
-					this.generateMap();
-				}
-			}
-		}
-	}
+					for (let i = 0; i < this.gameMapModel.length; i++) {
+						if (i !== 0) {
+							this.startCoordinate.y += this.hexagonRadius * Math.sin(this.startAngle);
+							this.startCoordinate.x = this.hexagonRadius + 10;
+						}
+						for (let j = 0; j < this.gameMapModel[i].length; j++) {
+							if (j !== 0) {
+								this.startCoordinate.x += this.hexagonRadius + this.hexagonRadius * Math.cos(this.startAngle);
+								this.startCoordinate.y -= (-1) ** j * this.hexagonRadius * Math.sin(this.startAngle);
+							}
 
-	public generateMap() {
-		for (let i = 0; i < this.gameMapModel.length; i++) {
-			if (i !== 0) {
-				this.startCoordinate.y += this.hexagonRadius * Math.sin(this.startAngle);
-				this.startCoordinate.x = this.hexagonRadius + 10;
-			}
-			for (let j = 0; j < this.gameMapModel[i].length; j++) {
-				if (j !== 0) {
-					this.startCoordinate.x += this.hexagonRadius + this.hexagonRadius * Math.cos(this.startAngle);
-					this.startCoordinate.y -= (-1) ** j * this.hexagonRadius * Math.sin(this.startAngle);
-				}
-
-				if (this.gameMapModel[i][j]) {
-					this.drawHexagon(this.gameMapModel[i][j]);
+							if (this.gameMapModel[i][j]) {
+								this.drawHexagon(this.gameMapModel[i][j]);
+							}
+						}
+					}
 				}
 			}
 		}
@@ -96,7 +94,9 @@ export class MapComponent implements OnInit {
 			}
 
 			cell.resource.split('|').forEach((item, index) => {
-				this.ctx.drawImage(this.mapIcons[item], this.startCoordinate.x + 5 - 35 * index, this.startCoordinate.y + 10, 20, 20);
+				if (this.mapIcons[item]) {
+					this.ctx.drawImage(this.mapIcons[item], this.startCoordinate.x + 5 - 35 * index, this.startCoordinate.y + 10, 20, 20);
+				}
 			})
 		}
 
@@ -106,7 +106,9 @@ export class MapComponent implements OnInit {
 		}
 
 		if (cell.landmark) {
-			this.ctx.drawImage(this.mapIcons[cell.landmark], this.startCoordinate.x - 30, this.startCoordinate.y + 10, 20, 20);
+			if (this.mapIcons[cell.landmark]) {
+				this.ctx.drawImage(this.mapIcons[cell.landmark], this.startCoordinate.x - 30, this.startCoordinate.y + 10, 20, 20);
+			}
 		}
 
 		if (cell.players?.length) {
@@ -122,8 +124,20 @@ export class MapComponent implements OnInit {
 	}
 
 	public getCellData(string: string): CellInterface {
-		const parsedString = string.split('-');
+		const parsedString = string.split('');
 
 		return this.gameMapTiles[parsedString[0]][parsedString[1]].cells[parsedString[2]];
+	}
+
+	public generateMap(terrain: string) {
+		console.log(terrain);
+		this.mapSettings = this.mapService.getMapSettings(terrain);
+
+		if (!Object.keys(this.mapSettings).length) return;
+
+		this.gameMapModel = this.mapSettings.mapModel;
+		this.gameMapTiles = this.mapSettings.mapTiles;
+
+		this.drawMap();
 	}
 }

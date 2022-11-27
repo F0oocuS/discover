@@ -10,4 +10,5 @@ export interface CellInterface {
 	isReveal: boolean;
 	isCanMove: boolean;
 	players?: number[];
+	cellCoordinate?: string;
 }

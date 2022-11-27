@@ -1,0 +1,15 @@
+.map {
+	&__title {
+		font-size: 16px;
+		color: #343434;
+	}
+
+	&__list {
+		display: flex;
+	}
+
+	&__list-item {
+		padding: 10px;
+		cursor: pointer;
+	}
+}
