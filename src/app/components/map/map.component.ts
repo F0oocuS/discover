@@ -130,7 +130,6 @@ export class MapComponent implements OnInit {
 	}
 
 	public generateMap(terrain: string) {
-		console.log(terrain);
 		this.mapSettings = this.mapService.getMapSettings(terrain);
 
 		if (!Object.keys(this.mapSettings).length) return;
