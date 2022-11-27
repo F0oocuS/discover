@@ -33,6 +33,8 @@ export class MapComponent implements OnInit {
 	private mapIconsLoadedCount: number = 0;
 	private mapIcons: any = { 'stone': null, 'water': null, 'meal': null, 'animal': null, 'tree': null, 'bonfire': null, 'boots': null, 'shovel': null, 'binoculars': null, 'player-0': null, 'player-1': null, 'player-2': null, 'player-3': null, 'camp': null };
 
+	private mapName = '';
+
 	ngOnInit(): void {
 		this.ctx = this.map.nativeElement.getContext('2d');
 
@@ -40,7 +42,7 @@ export class MapComponent implements OnInit {
 		this.ctx.strokeStyle = '#000';
 	}
 
-	public drawMap(): void {
+	public initMap(): void {
 		for (let image in this.mapIcons) {
 			const imageElement = new Image();
 			imageElement.src = `assets/images/icons/map-icons/${image}.svg`;
@@ -50,22 +52,26 @@ export class MapComponent implements OnInit {
 				this.mapIcons[image] = imageElement;
 
 				if (this.mapIconsLoadedCount === Object.keys(this.mapIcons).length) {
-					for (let i = 0; i < this.gameMapModel.length; i++) {
-						if (i !== 0) {
-							this.startCoordinate.y += this.hexagonRadius * Math.sin(this.startAngle);
-							this.startCoordinate.x = this.hexagonRadius + 10;
-						}
-						for (let j = 0; j < this.gameMapModel[i].length; j++) {
-							if (j !== 0) {
-								this.startCoordinate.x += this.hexagonRadius + this.hexagonRadius * Math.cos(this.startAngle);
-								this.startCoordinate.y -= (-1) ** j * this.hexagonRadius * Math.sin(this.startAngle);
-							}
+					this.drawMap();
+				}
+			}
+		}
+	}
 
-							if (this.gameMapModel[i][j]) {
-								this.drawHexagon(this.gameMapModel[i][j]);
-							}
-						}
-					}
+	public drawMap(): void {
+		for (let i = 0; i < this.gameMapModel.length; i++) {
+			if (i !== 0) {
+				this.startCoordinate.y += this.hexagonRadius * Math.sin(this.startAngle);
+				this.startCoordinate.x = this.hexagonRadius + 10;
+			}
+			for (let j = 0; j < this.gameMapModel[i].length; j++) {
+				if (j !== 0) {
+					this.startCoordinate.x += this.hexagonRadius + this.hexagonRadius * Math.cos(this.startAngle);
+					this.startCoordinate.y -= (-1) ** j * this.hexagonRadius * Math.sin(this.startAngle);
+				}
+
+				if (this.gameMapModel[i][j]) {
+					this.drawHexagon(this.gameMapModel[i][j]);
 				}
 			}
 		}
@@ -137,6 +143,21 @@ export class MapComponent implements OnInit {
 		this.gameMapModel = this.mapSettings.mapModel;
 		this.gameMapTiles = this.mapSettings.mapTiles;
 
-		this.drawMap();
+		if (!this.mapName) {
+			this.mapName = terrain;
+			this.initMap();
+		}
+
+		if (this.mapName !== terrain) {
+			this.mapName = terrain;
+			this.clearMap();
+			this.drawMap()
+		}
+	}
+
+	public clearMap() {
+		this.startCoordinate.x = this.hexagonRadius + 10;
+		this.startCoordinate.y = this.hexagonRadius + 10;
+		this.ctx.clearRect(0, 0, 1800, 1800);
 	}
 }
