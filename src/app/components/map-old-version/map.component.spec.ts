@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MapCanvasComponent } from './map-canvas.component';
+import { MapOldVersionComponent } from './map.component';
 
-describe('MapCanvasComponent', () => {
-  let component: MapCanvasComponent;
-  let fixture: ComponentFixture<MapCanvasComponent>;
+describe('MapComponent', () => {
+  let component: MapOldVersionComponent;
+  let fixture: ComponentFixture<MapOldVersionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MapCanvasComponent ]
+      declarations: [ MapOldVersionComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MapCanvasComponent);
+    fixture = TestBed.createComponent(MapOldVersionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,8 +1,15 @@
 .map {
-	&__row {
+	&__title {
+		font-size: 16px;
+		color: #343434;
+	}
+
+	&__list {
 		display: flex;
-		&:nth-child(even) {
-			margin-bottom: -151px;
-		}
+	}
+
+	&__list-item {
+		padding: 10px;
+		cursor: pointer;
 	}
 }

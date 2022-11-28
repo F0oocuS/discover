@@ -8,7 +8,7 @@ import { TileInterface } from '../../interfaces/map/tile.interface';
 export class GameDataService {
 	constructor() {}
 
-	private tiles0: TileInterface[] = [
+	/*private tiles0: TileInterface[] = [
 		{
 			id: 0,
 			cells: [
@@ -347,5 +347,5 @@ export class GameDataService {
 
 	getGameMapModel() {
 		return this.gameMapModel;
-	}
+	}*/
 }
