@@ -128,7 +128,7 @@ export class SnowyMountainsService {
 				{ id: 68, cellType: CELL_TYPE_SNOWY_SNOW, landmark: null, resource: 'animal', objective: null, tileID: 6, isReveal: true, isCanMove: true },
 				{ id: 69, cellType: CELL_TYPE_SNOWY_CLIFF, landmark: null, resource: null, objective: null, tileID: 6, isReveal: true, isCanMove: true }
 			],
-			number: 0
+			number: 2
 		}
 	];
 	private tiles3: TileInterface[] = [

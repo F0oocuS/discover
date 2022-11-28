@@ -275,7 +275,7 @@ export class DesertService {
 				{ id: 158, cellType: CELL_TYPE_DESERT_SAND, landmark: null, resource: null, objective: null, tileID: 15, isReveal: true, isCanMove: true },
 				{ id: 159, cellType: CELL_TYPE_DESERT_SAND, landmark: null, resource: null, objective: null, tileID: 15, isReveal: true, isCanMove: true }
 			],
-			number: 0
+			number: 4
 		},
 		{
 			id: 16,
