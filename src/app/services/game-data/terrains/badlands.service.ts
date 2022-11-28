@@ -12,8 +12,6 @@ import {
 	providedIn: 'root'
 })
 export class BadlandsService {
-	constructor() {}
-
 	private tiles0: TileInterface[] = [
 		{
 			id: 0,

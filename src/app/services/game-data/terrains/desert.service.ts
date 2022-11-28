@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 
 import { TileInterface } from '../../../interfaces/map/tile.interface';
 import {
-	CELL_TYPE_DESERT_DUNE, CELL_TYPE_DESERT_GRASS, CELL_TYPE_DESERT_MOUNTAIN,
+	CELL_TYPE_DESERT_GRASS,
 	CELL_TYPE_DESERT_SAND,
+	CELL_TYPE_DESERT_DUNE,
+	CELL_TYPE_DESERT_MOUNTAIN
 } from '../../../constants/map/cell-types.constants';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class DesertService {
-	constructor() {}
-
 	private tiles0: TileInterface[] = [
 		{
 			id: 0,
@@ -127,7 +127,6 @@ export class DesertService {
 			],
 			number: 1
 		}
-
 	];
 	private tiles2: TileInterface[] = [
 		{

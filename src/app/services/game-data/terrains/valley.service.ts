@@ -2,7 +2,11 @@ import { Injectable } from '@angular/core';
 
 import { TileInterface } from '../../../interfaces/map/tile.interface';
 
-import { CELL_TYPE_VALLEY_GRASS, CELL_TYPE_VALLEY_HILL, CELL_TYPE_VALLEY_MOUNTAIN } from '../../../constants/map/cell-types.constants';
+import {
+	CELL_TYPE_VALLEY_GRASS,
+	CELL_TYPE_VALLEY_HILL,
+	CELL_TYPE_VALLEY_MOUNTAIN
+} from '../../../constants/map/cell-types.constants';
 
 @Injectable({
 	providedIn: 'root'

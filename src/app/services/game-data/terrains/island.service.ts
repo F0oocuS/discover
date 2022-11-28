@@ -3,18 +3,17 @@ import { Injectable } from '@angular/core';
 import { TileInterface } from '../../../interfaces/map/tile.interface';
 
 import {
+	CELL_TYPE_ISLAND_GRASS,
 	CELL_TYPE_ISLAND_BEACH,
-	CELL_TYPE_ISLAND_GRASS, CELL_TYPE_ISLAND_MOUNTAIN,
-	CELL_TYPE_ISLAND_OCEAN, CELL_TYPE_ISLAND_UNDERBRUSH
+	CELL_TYPE_ISLAND_OCEAN,
+	CELL_TYPE_ISLAND_UNDERBRUSH,
+	CELL_TYPE_ISLAND_MOUNTAIN
 } from '../../../constants/map/cell-types.constants';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class IslandService {
-	constructor() {
-	}
-
 	private tiles0: TileInterface[] = [
 		{
 			id: 0,
