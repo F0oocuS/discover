@@ -158,6 +158,6 @@ export class MapComponent implements OnInit {
 	public clearMap() {
 		this.startCoordinate.x = this.hexagonRadius + 10;
 		this.startCoordinate.y = this.hexagonRadius + 10;
-		this.ctx.clearRect(0, 0, 1800, 1800);
+		this.ctx.clearRect(0, 0, 2200, 1800);
 	}
 }

@@ -12,7 +12,7 @@ export const CELL_TYPE_SNOWY_SNOW: CellTypeInterface = { name: 'Snow', color: '#
 export const CELL_TYPE_SNOWY_DEEP_SNOW: CellTypeInterface= { name: 'Deep Snow', color: '#f2faff', moveCost: 2 };
 export const CELL_TYPE_SNOWY_MOUNTAIN: CellTypeInterface = { name: 'Mountain', color: '#a1908c', moveCost: 3 };
 export const CELL_TYPE_SNOWY_CLIFF: CellTypeInterface = { name: 'Cliff', color: '#42322e', moveCost: 4 };
-export const CELL_TYPE_SNOWY_MELT_SNOW: CellTypeInterface = { name: 'Cliff', color: '#8a8a8a', moveCost: 1 };
+export const CELL_TYPE_SNOWY_MELT_SNOW: CellTypeInterface = { name: 'Melt Snow', color: '#8a8a8a', moveCost: 1 };
 
 // Desert terrain types
 export const CELL_TYPE_DESERT_SAND: CellTypeInterface = { name: 'Sand', color: '#f7ecc1', moveCost: 1 }
