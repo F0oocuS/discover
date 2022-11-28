@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { CellInterface } from '../../interfaces/map/cell.interface';
+import { TileInterface } from '../../interfaces/map/tile.interface';
 
 import { MapService } from '../../services/map/map.service';
 
@@ -136,12 +137,16 @@ export class MapComponent implements OnInit {
 	}
 
 	public generateMap(terrain: string) {
+		if (this.mapName === terrain) return;
+
 		this.mapSettings = this.mapService.getMapSettings(terrain);
 
 		if (!Object.keys(this.mapSettings).length) return;
 
 		this.gameMapModel = this.mapSettings.mapModel;
 		this.gameMapTiles = this.mapSettings.mapTiles;
+
+		this.gameMapTiles.forEach((item: TileInterface[]) => this.shuffleArray(item));
 
 		if (!this.mapName) {
 			this.mapName = terrain;
@@ -159,5 +164,18 @@ export class MapComponent implements OnInit {
 		this.startCoordinate.x = this.hexagonRadius + 10;
 		this.startCoordinate.y = this.hexagonRadius + 10;
 		this.ctx.clearRect(0, 0, 2200, 1800);
+	}
+
+	public shuffleArray(array: any[]) {
+		let currentIndex = array.length,  randomIndex;
+
+		while (currentIndex != 0) {
+			randomIndex = Math.floor(Math.random() * currentIndex);
+			currentIndex--;
+
+			[array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+		}
+
+		return array;
 	}
 }
