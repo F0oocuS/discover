@@ -1,1 +1,9 @@
-<p>lobby-page works!</p>
+<div class="lobby">
+	<button class="lobby__button">Create your own lobby</button>
+	<div class="lobby__alternative">or choose an existing lobby</div>
+	<div class="lobby__list">
+		<div class="lobby__item" *ngFor="let item of lobbyItem">
+			<app-lobby-item [item]="item"></app-lobby-item>
+		</div>
+	</div>
+</div>

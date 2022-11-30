@@ -1,20 +1,23 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { MapComponent } from './components/map/map.component';
-import { MapTileComponent } from './components/map/map-tile/map-tile.component';
-import { MapCellComponent } from './components/map/map-cell/map-cell.component';
-import { MapCanvasComponent } from './components/map-canvas/map-canvas.component';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { GamePageComponent } from './pages/game-page/game-page.component';
-import { LobbyPageComponent } from './pages/lobby-page/lobby-page.component';
-import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
-import { RegistrationFormComponent } from './components/auth/registration-form/registration-form.component';
-import { LoginFormComponent } from './components/auth/login-form/login-form.component';
-
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {MapComponent} from './components/map/map.component';
+import {MapTileComponent} from './components/map/map-tile/map-tile.component';
+import {MapCellComponent} from './components/map/map-cell/map-cell.component';
+import {MapCanvasComponent} from './components/map-canvas/map-canvas.component';
+import {LoginPageComponent} from './pages/login-page/login-page.component';
+import {HomePageComponent} from './pages/home-page/home-page.component';
+import {GamePageComponent} from './pages/game-page/game-page.component';
+import {LobbyPageComponent} from './pages/lobby-page/lobby-page.component';
+import {RegistrationPageComponent} from './pages/registration-page/registration-page.component';
+import {RegistrationFormComponent} from './components/auth/registration-form/registration-form.component';
+import {LoginFormComponent} from './components/auth/login-form/login-form.component';
+import {LobbyItemComponent} from './components/lobby-item/lobby-item.component';
+import {NewLobbyComponent} from './components/new-lobby/new-lobby.component';
+import {NewLobbyPageComponent} from "./pages/new-lobby-page/new-lobby-page.component";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -31,15 +34,18 @@ import { LoginFormComponent } from './components/auth/login-form/login-form.comp
 		MapCanvasComponent,
 		RegistrationPageComponent,
 		RegistrationFormComponent,
-  LoginFormComponent,
+		LoginFormComponent,
+		LobbyItemComponent,
+		NewLobbyPageComponent,
+		NewLobbyComponent,
 	],
 	imports: [
 		BrowserModule,
-		AppRoutingModule
+		AppRoutingModule,
+		ReactiveFormsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
 })
 
-export class AppModule {
-}
+export class AppModule {}
