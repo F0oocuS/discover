@@ -1,0 +1,82 @@
+.lobby-item {
+	padding: 20px 18px;
+	background: #24514e;
+	color: #fff;
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	border-radius: 8px;
+	margin-bottom: 12px;
+	margin-right: 12px;
+
+	&__name-box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: 6px;
+		margin-bottom: 22px;
+	}
+
+	&__name {
+		text-transform: uppercase;
+		font-size: 24px;
+		letter-spacing: 1px;
+		font-weight: 400;
+	}
+
+	&__icon {
+		width: 20px;
+		height: 20px;
+		align-self: flex-start;
+	}
+
+	&__game-information {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: 40px;
+		margin-bottom: 12px;
+		font-weight: 400;
+		font-style: italic;
+		font-size: 16px;
+		text-transform: uppercase;
+	}
+
+	&__map-name {
+		position: relative;
+
+		&:after {
+			content: "";
+			width: 1px;
+			height: 16px;
+			background: #fff;
+			position: absolute;
+			top: 0;
+			right: -20px;
+
+		}
+	}
+
+	&__num-scenario {
+
+	}
+
+	&__description {
+		color: rgba(255, 255, 255, 0.8);
+		margin-bottom: 18px;
+	}
+
+	&__join-button {
+		display: block;
+		margin: 0 auto;
+		cursor: pointer;
+		padding: 8px 34px;
+		border: none;
+		background: #fff;
+		border-radius: 8px;
+		color: #24514e;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 400;
+
+
+	}
+}

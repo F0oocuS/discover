@@ -1,0 +1,51 @@
+<div class="card">
+	<div class="card__title">Create your own lobby</div>
+	<input class="card__input-name" type="text" placeholder="Lobby/game name">
+	<textarea class="card__description" name="description" placeholder="Description:"></textarea>
+	<div class="card__select-container">
+		<div class="card__select select">
+			<div class="select__title">Select a map:</div>
+			<select class="select__container" name="select-map">
+				<option class="select__item" selected>Valley</option>
+				<option class="select__item">Snowy</option>
+				<option class="select__item">Desert</option>
+				<option class="select__item">Badlands</option>
+				<option class="select__item">Bayou</option>
+				<option class="select__item">Island</option>
+			</select>
+		</div>
+		<div class="select">
+			<div class="select__title">Select a scenario:</div>
+			<select class="select__container" name="select-map">
+				<option class="select__item" selected>1</option>
+				<option class="select__item">2</option>
+				<option class="select__item">3</option>
+				<option class="select__item">4</option>
+				<option class="select__item">5</option>
+			</select>
+		</div>
+		<div class="select">
+			<div class="select__title">Select the count of players:</div>
+			<select class="select__container" name="select-map">
+				<option class="select__item" selected>1</option>
+				<option class="select__item">2</option>
+				<option class="select__item">3</option>
+				<option class="select__item">4</option>
+			</select>
+		</div>
+	</div>
+	<div class="card__radio radio">
+		<div class="radio__title select__title">Select type of lobby:</div>
+		<div class="radio__container">
+			<input class="radio__input radio__input--public" type="radio" name="type" id="public" value="public">
+			<input class="radio__input radio__input--private" type="radio" name="type" id="private" value="private">
+			<div class="radio__switcher-container">
+				<label for="public" class="radio__label">Public</label>
+				<label for="private" class="radio__label">Private</label>
+				<span class="radio__switcher"></span>
+			</div>
+		</div>
+	</div>
+	<input class="card__input-name" type="password" placeholder="Create a password">
+	<button class="card__final">Create</button>
+</div>
